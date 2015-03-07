@@ -22,6 +22,22 @@ class Slide
     @body    = options["body"]
   end
   
+  #---------------------------------------------------------
+  # Public: to_hash
+  # Creates a has of Slide class for a single id
+  #
+  # Parameter: Integer: id
+  #
+  # Returns: Single Slide object with matching id (passed as argument)
+  #---------------------------------------------------------
+  def to_hash
+    {
+      id: id,
+      title: title,
+      body: body,
+    }
+  end
+
 
   #---------------------------------------------------------
   # Public: .where_id_is
@@ -35,10 +51,11 @@ class Slide
     sql_query = "SELECT * FROM slides WHERE id = '#{id}'"
 
     x = DATABASE.execute(sql_query)
-    results = Guest.new(x[0])
-    return results
+    # results = Slide.new(x[0])
+    return x[0]
   end
 
+  # results = Slide.new(x[0])
 
   #---------------------------------------------------------
   # Public: .all

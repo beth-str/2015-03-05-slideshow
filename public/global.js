@@ -1,39 +1,54 @@
+var current_slide = 1;
+
 window.onload = function(){
 
   //startSlide
-  document.getElementById("allStudents").onclick = all_students;
-  function all_students() {
-    var js_req = new XMLHttpRequest;
-    js_req.addEventListener("load", function() {
-      document.getElementById("results").innerHTML = js_req.response;
-    });
-    js_req.open("get","http://localhost:4567/");
-    js_req.send();
-  }
+  function load () {
+    console.log('load is running');
+    var js_req = new XMLHttpRequest();
+      js_req.addEventListener("load", function() {
 
+        var x = js_req.response;
+        var title = x.title;
+        var body = x.body;
 
-  //nextSlide
-  document.getElementById("allStudents").onclick = all_students;
-  function all_students() {
-    var js_req = new XMLHttpRequest;
-    js_req.addEventListener("load", function() {
-      document.getElementById("results").innerHTML = js_req.response;
-    });
-    js_req.open("get","http://localhost:4567/nextslide");
-    js_req.send();
-  }
+        document.getElementById("title").innerHTML = title;
+        document.getElementById("body").innerHTML = body;
 
+        js_req.open("get","http://localhost:4567/");
+        js_req.send();
+        ;} //EventListener
+    );} //function load
+}; //window onload
 
-  //previousSlide
-  document.getElementById("changeName").onclick = change_name;
-  function change_name() {
-    var id = prompt("What is the student ID?");
-    var new_name = prompt("What is the student's name?");
-    var js_req = new XMLHttpRequest;
-    js_req.addEventListener("load", function() {
-      document.getElementById("results").innerHTML = "Successfully changed the name.";
-    });
-    js_req.open("get","http://localhost:4567/students/"+ id +"/new_name/"+new_name);
-    js_req.send();
-  }
-};
+  // //nextSlide
+  // document.getElementById("next_btn").onclick = next_slide;
+  // function next_slide() {
+  //   var js_req = new XMLHttpRequest;
+  //   js_req.addEventListener("load", function() {
+  //
+  //     var parsed_response = JSON.parse(js_req.response);
+  //     console.log(parsed_response.title);
+  //     var title = parsed_response.title;
+  //     var body = parsed_response.body;
+  //
+  //     document.getElementById("title").innerHTML = title;
+  //     document.getElementById("body").innerHTML = body;
+  //
+  //   });
+  //   js_req.open("get","http://localhost:4567/")
+  //   js_req.send();
+  // }
+  //
+  //
+  // //previousSlide
+  // document.getElementById("prev_btn").onclick = prev_slide;
+  // function prev_slide() {
+  //   var js_req = new XMLHttpRequest;
+  //   js_req.addEventListener("load", function() {
+  //     document.getElementById("results").innerHTML =     js_req.send();
+  //   });
+  //   js_req.open("get","http://localhost:4567/prevslide"+ id + "/new_name/" + new_name);
+  //   js_req.send();
+  // }
+// } //window onload
