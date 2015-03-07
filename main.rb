@@ -15,10 +15,16 @@ get "/" do
 end
 
 
-get "/" do 
+get "/1" do 
   get_slide = Slide.where_id_is(1)
   get_slide.to_json
 end
+
+get "/2" do 
+  get_slide = Slide.where_id_is(2)
+  get_slide.to_json
+end
+
 
 #all slides
 get "/allslides" do

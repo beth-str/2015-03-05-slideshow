@@ -3,14 +3,21 @@
 	
 body {
 	background: #EEE7D5;
-	font-family: 'Libre Baskerville';
+	font-family: 'Verdana';
+}
+
+ h2 {
+	font-size: 70px;
+  text-align: center;
+	color: #000066;
 }
 
 #box {
-	width: 600px;
+	width: 700px;
+  height: 200px;
 	margin: 0 auto;
-	background: #93A1A1;
-	padding: 1px 20px;
+	background: #CCCCCC;
+	padding: 20px;
 	border-radius: 10px;
 	overflow: hidden;
 }
@@ -22,25 +29,25 @@ body {
 } 
 
 #box h3 {
-	font-size: 6em;
+	font-size: 50px;
 	line-height: .9em;
-	font-family: 'Roboto';
-	color: #115F79;
+	color: #990033;
+  margin: 0 0 20px 0;
 }
 
 #box h4 {
-	font-size: 4em;
-	color: #973C26;
+	font-size: 40px;
+	color: #003333;
 	font-weight: bold;
 	margin-bottom: 5px;
 	line-height: 1.2em;
 }
 
 #box #next_btn, #box #prev_btn {
-	background: #d33682;
+	background: #000066;
 	padding: 5px 10px;
 	border-radius: 10px;
-	margin: 10px 0;
+	margin: 20px 0;
 	display: inline-block;
 }
 
