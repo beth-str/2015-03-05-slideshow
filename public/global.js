@@ -1,14 +1,22 @@
 var current_slide = 1;
-var parsed_response;
-var nextButton = document.getElementById("next_btn");
-var prevButton = document.getElementById("prev_btn");
 
+window.onload = function(){
+  //Run function to load initial slide
+  loadFirstSlide();
 
-window.onload = function() {
+  //Set buttons to variables by their id
+  nextButton = document.getElementById("next_btn");
+  prevButton = document.getElementById("prev_btn");
 
-//Load initial slide on window / page load
+  //Listen for next_btn and prev_button
+  nextButton.addEventListener("click", nextSlide);
+  prevButton.addEventListener("click", prevSlide);
+}
+
+// Load first slide on window / page load
+var loadFirstSlide = function(){
   var initial_request = new XMLHttpRequest();
-  initial_request.open ("GET", "/" + current_slide);
+  initial_request.open("get", "/1");
   initial_request.onreadystatechange = function() {
     if ((initial_request.readyState===4) && (initial_request.status===200)) {
       var parsed_response = JSON.parse(initial_request.response);
@@ -17,59 +25,41 @@ window.onload = function() {
     }//parse
   } //onreadystatechange
   initial_request.send();
-  
-  //Listen for next_btn and prev_button
-  nextButton.onclick, nextSlide;
-  prevButton.addEventListener("click", prevSlide);
-  
-}; //pageLoad
+} //loadFirstSlide
 
+//Load nextSlide when the next_button is pushed
+var nextSlide = function(){
+  //Advance the current slide to the nextSlideNumber
+  current_slide = current_slide + 1;
+  //Show the current_slide number in the console (to prove that the function nextSlideNumber is working)
+  console.log(current_slide);
+  //make and parse request and return to innerHTML
+  var next_req = new XMLHttpRequest();
+  next_req.open("get", "http://localhost:4567/" + current_slide);
+  next_req.onreadystatechange = function() {
+    if ((next_req.readyState===4) && (next_req.status===200)) {
+    var parsed_response = JSON.parse(next_req.response);
+    console.log(parsed_response);
+    document.getElementById("title").innerHTML = parsed_response.title;
+    document.getElementById("body").innerHTML = parsed_response.body;
+    }//parse
+  } //onreadystatechange
+  next_req.send();
+} //nextSlide
 
-  //Load nextSlide when the next_button is pushed
-    var nextSlide = function () {
-      //Show that this function is firing in the console
-      console.log("Next slide...");
-      //Advance the current slide to the nextSlideNumber
-      var current_slide = current_slide + 1;
-      //Show the current_slide number in the console (to prove that the function nextSlideNumber is working)
-      console.log(current_slide);
-      //make and parse request and return to innerHTML
-      var next_request = new XMLHttpRequest();
-      next_request.open ("GET", "/" + current_slide);
-      var parsed_response = JSON.parse(next_request.response);
-      console.log(parsed_response);
-      document.getElementById("title").innerHTML = parsed_response.title;
-      document.getElementById("body").innerHTML = parsed_response.body;
-      next_request.send();
-    } //next_slide
-
-  //Load prevSlide when the prev_button is pushed
-    var prevSlide = function () {
-      alert("Prev slide...");
-      var current_slide = current_slide - 1;
-      console.log(current_slide);
-      var prev_request = new XMLHttpRequest();
-      prev_request.open ("GET", "/" + current_slide);
-      var parsed_response = JSON.parse(prev_request.response);
-      console.log(parsed_response);
-      document.getElementById("title").innerHTML = parsed_response.title;
-      document.getElementById("body").innerHTML = parsed_response.body;
-      prev_request.send();
-    } //prev_slide
-
-
-//Change slide number to next slide
-// var nextSlideNumber = function() {
-//   current_slide + 1;
-//   alert("Next slide is:" + current_slide);
-//   return current_slide;
-// }
-//
-// //Change slide number to previous slide
-// var prevSlideNumber = function() {
-//   if (current_slide===1) {
-//     current_slide===5
-//   } else current_slide = current_slide - 1;
-//   alert("Previous slide is:" + current_slide);
-//   return current_slide;
-// }
+//Load prevSlide when the prev_button is pushed
+var prevSlide = function(){
+  current_slide = current_slide - 1;
+  console.log(current_slide);
+  var prev_req = new XMLHttpRequest();
+  prev_req.open("get", "http://localhost:4567/" + current_slide);
+  prev_req.onreadystatechange = function() {
+    if ((prev_req.readyState===4) && (prev_req.status===200)) {
+    var parsed_response = JSON.parse(prev_req.response);
+    console.log(parsed_response);
+    document.getElementById("title").innerHTML = parsed_response.title;
+    document.getElementById("body").innerHTML = parsed_response.body;
+    } //parse
+  } //onreadystatechange
+  prev_req.send();
+} //prevSlide
