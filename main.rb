@@ -25,6 +25,21 @@ get "/2" do
   get_slide.to_json
 end
 
+get "/3" do 
+  get_slide = Slide.where_id_is(3)
+  get_slide.to_json
+end
+
+get "/4" do 
+  get_slide = Slide.where_id_is(4)
+  get_slide.to_json
+end
+
+get "/5" do 
+  get_slide = Slide.where_id_is(5)
+  get_slide.to_json
+end
+
 
 #all slides
 get "/allslides" do
