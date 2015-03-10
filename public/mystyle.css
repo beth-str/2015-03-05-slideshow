@@ -14,12 +14,12 @@ body {
 
 #box {
 	width: 500px;
-  height: 150px;
+  height: 175px;
 	margin: 0 auto;
 	background: #CCCCCC;
 	padding: 20px;
 	border-radius: 10px;
-	overflow: hidden;
+	overflow: auto;
 }
 
 #box h3, #box h4 {
@@ -29,7 +29,7 @@ body {
 } 
 
 #box h3 {
-	font-size: 40px;
+	font-size: 36px;
 	line-height: .9em;
 	color: #990033;
   margin: 0 0 20px 0;
