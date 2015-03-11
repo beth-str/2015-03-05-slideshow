@@ -7,10 +7,12 @@ window.onload = function(){
   //Set buttons to variables by their id
   nextButton = document.getElementById("next_btn");
   prevButton = document.getElementById("prev_btn");
+  idButton = document.getElemetnById("id_btn")
 
   //Listen for next_btn and prev_button
   nextButton.addEventListener("click", nextSlide);
   prevButton.addEventListener("click", prevSlide);
+  idButton.addEventListener("click", logIn);
 }
 
 // Load first slide on window / page load
@@ -29,10 +31,24 @@ var loadFirstSlide = function(){
   initial_request.send();
 } //loadFirstSlide
 
+//Request to login
+var logIn = function() {
+  //Show login page to user
+  var log_req = new XMLHttpRequest();
+  log_req.open("get", "http://localhost:4567/login");
+  log_req.onreadystatechange = function() {
+    if ((log_req.readyState===4) && (log_req.status===200)) {
+      var parsed_response = JSON.parse(log_req.response);
+document.getElementById("login").innerHTML = parsed_response
+    }//parse
+  }//onreadystatechange
+} //logIn
+
+
 //Load nextSlide when the next_button is pushed
 var nextSlide = function(){
   //Advance the current slide to the nextSlideNumber
-  //unless current_slide is 8, then go to 1
+  //If current_slide is 8, then go to 1
   if(current_slide===8){
     current_slide = 1
   }else {
