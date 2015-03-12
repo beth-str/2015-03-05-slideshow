@@ -11,6 +11,14 @@
 </head>
 
 <body>
+      <div align="right">
+        <% if session[:user_id] != 'nil'%><div style="font-size:8px" id="user">Hello, <%= session[:user_id] %>! </div>
+        <% end %>
+        <!-- <a href="/login" id="id_btn">Log in</a> -->
+        <a href="/login"><button id="li_btn">Log in</button></a>
+        <!-- <a href="/login" id="id_btn">Log in</a> -->
+        <a href="/logout"><button id="lo_btn">Log out</button></a>
+      </div>
 
   <h2>Minnesota State Facts</h2>
   <p><div id="login"></div></p>
@@ -23,8 +31,6 @@
       <button value="current_slide" id="next_btn">Next</button>
     </div>
     
-      <!-- <a href="/login" id="id_btn">Log in</a> -->
-      <a href="/login"><button id="id_btn">Log in</button></a>
       
 </body>
 </html> 

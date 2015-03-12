@@ -7,12 +7,14 @@ window.onload = function(){
   //Set buttons to variables by their id
   nextButton = document.getElementById("next_btn");
   prevButton = document.getElementById("prev_btn");
-  idButton = document.getElementById("id_btn")
+  liButton = document.getElementById("li_btn")
+  loButton = document.getElementById("lo_btn")
 
   //Listen for next_btn and prev_button
   nextButton.addEventListener("click", nextSlide);
   prevButton.addEventListener("click", prevSlide);
-  idButton.addEventListener("click", logIn);
+  liButton.addEventListener("click", logIn);
+  loButton.addEventListener("click", logOut);
 }
 
 // Load first slide on window / page load

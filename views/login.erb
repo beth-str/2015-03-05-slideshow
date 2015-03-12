@@ -1,7 +1,7 @@
 <form action="/login_verify" method="post">
   <p><%= @error %></p>
   <p>Username:<br>
-  <input type="text" placeholder="Enter your email" style="font-size:14px" required class="longtextbox" name="username"></p>
+  <input type="email" placeholder="Enter your email" style="font-size:14px" required class="longtextbox" name="username"></p>
   <p>Password:<br>
   <input type="password" placeholder="Enter your password" style="font-size:14px" required class="longtextbox" name="password"></p>
   <input type="submit" id="submit" value="Log In">

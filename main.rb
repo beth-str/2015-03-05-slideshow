@@ -10,7 +10,6 @@ require 'sinatra/activerecord'
 
 set :database, {adapter: "sqlite3", database: "database/slideshow.db"}
 
-enable :sessions
 
 require_relative "database/db_setup"
 
@@ -20,6 +19,9 @@ DATABASE = SQLite3::Database.new("database/slideshow.db")
 require_relative "models/slide.rb"
 require_relative "models/user.rb"
 
+configure do
+  enable :sessions
+end
 
 get "/" do 
   erb :homepage
@@ -29,18 +31,26 @@ get "/login" do
   erb :login
 end
 
+get "/logout" do
+  session.clear
+  redirect "/"
+end
+
 post "/login_verify" do
-  binding.pry
-  if user = User.find_by_username(params["username"])
-    if BCrypt::Password.create(params[:password]) == params[:password]
+  if User.find_by_username(params["username"]) != nil
+    user = User.find_by_username(params["username"])
+    # if BCrypt::Password.create(params[:password]) == user.password #based on a string
+    if BCrypt::Password.new(user.password) == params[:password] #based on a hash or a string
       session[:user_id] = user.id
       redirect "/"
     else
-      @error = "Password incorrect"
+      @error = "Invalid email/password combination"
+      redirect "/login"
     end
   else
     params["password"] = BCrypt::Password.create(params[:password])
-    User.create(username: params["username"], password: params["password"])
+    user = User.create(username: params["username"], password: params["password"])
+    session[:user_id] = user.id
   end
   redirect "/"
 end
@@ -59,8 +69,8 @@ end
 
 # def current_user
 #   if session[:user_id]
-#   @current_user = User.find(session[:user_id])
+#     @current_user = User.find(session[:user_id])
 #   else redirect "/login"
+#   end
 # end
-# end
-#
+
