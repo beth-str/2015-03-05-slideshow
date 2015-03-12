@@ -7,7 +7,7 @@ window.onload = function(){
   //Set buttons to variables by their id
   nextButton = document.getElementById("next_btn");
   prevButton = document.getElementById("prev_btn");
-  idButton = document.getElemetnById("id_btn")
+  idButton = document.getElementById("id_btn")
 
   //Listen for next_btn and prev_button
   nextButton.addEventListener("click", nextSlide);
@@ -42,6 +42,7 @@ var logIn = function() {
 document.getElementById("login").innerHTML = parsed_response
     }//parse
   }//onreadystatechange
+  log_req.send();
 } //logIn
 
 

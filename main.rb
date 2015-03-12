@@ -31,7 +31,7 @@ end
 
 post "/login_verify" do
   binding.pry
-  if user = User.find_by({username => "username"})
+  if user = User.find_by_username(params["username"])
     if BCrypt::Password.create(params[:password]) == params[:password]
       session[:user_id] = user.id
       redirect "/"
