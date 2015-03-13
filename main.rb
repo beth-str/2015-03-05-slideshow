@@ -3,7 +3,9 @@ require 'bundler/setup' #instructs this file to look for the files that it needs
 require 'bcrypt'
 require 'pry'
 require 'sinatra'
-require 'sqlite3'
+configure :development do
+  require 'sqlite3'
+end
 require 'json'
 
 require 'sinatra/activerecord'
@@ -25,13 +27,15 @@ configure :development do
   set :database, {adapter: "sqlite3", database: "database/slideshow.db"}
 end
 
-require_relative "database/db_setup"
-
-DATABASE = SQLite3::Database.new("database/slideshow.db")
-# DATABASE.results_as_hash = true
-
 require_relative "models/slide.rb"
 require_relative "models/user.rb"
+require_relative "database/db_setup"
+
+configure :development do
+  DATABASE = SQLite3::Database.new("database/slideshow.db")
+end
+# DATABASE.results_as_hash = true
+
 
 configure do
   enable :sessions
