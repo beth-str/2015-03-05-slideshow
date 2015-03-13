@@ -8,8 +8,9 @@ require 'json'
 
 require 'sinatra/activerecord'
 
-set :database, {adapter: "sqlite3", database: "database/slideshow.db"}
-
+configure :development do
+  set :database, {adapter: "sqlite3", database: "database/slideshow.db"}
+end
 
 require_relative "database/db_setup"
 
@@ -23,11 +24,19 @@ configure do
   enable :sessions
 end
 
+before "/1" do
+  if session[:user_id]
+  else
+    redirect "/login"
+  end
+end
+
 get "/" do 
   erb :homepage
 end
 
 get "/login" do
+  write unless 
   erb :login
 end
 
@@ -45,6 +54,7 @@ post "/login_verify" do
       redirect "/"
     else
       @error = "Invalid email/password combination"
+      session[:error] = @error
       redirect "/login"
     end
   else

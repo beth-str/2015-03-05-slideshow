@@ -1,5 +1,9 @@
+<% unless @error.nil? %>
+<%= @error %>
+<% end %>
+
 <form action="/login_verify" method="post">
-  <p><%= @error %></p>
+
   <p>Username:<br>
   <input type="email" placeholder="Enter your email" style="font-size:14px" required class="longtextbox" name="username"></p>
   <p>Password:<br>

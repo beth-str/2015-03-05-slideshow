@@ -12,8 +12,9 @@
 
 <body>
       <div align="right">
-        <% if session[:user_id] != 'nil'%><div style="font-size:8px" id="user">Hello, <%= session[:user_id] %>! </div>
-        <% end %>
+        <% if session[:user_id] != nil %>
+        <div style="font-size:8px" id="user">Hello, <%= session[:user_id] %>! </div>
+        <%end%>
         <!-- <a href="/login" id="id_btn">Log in</a> -->
         <a href="/login"><button id="li_btn">Log in</button></a>
         <!-- <a href="/login" id="id_btn">Log in</a> -->
