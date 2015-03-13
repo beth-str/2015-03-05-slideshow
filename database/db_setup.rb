@@ -18,13 +18,13 @@ end
 
 
 Slide.create([{title: "State Name", body: "'Minnesota' is the Dakota word for 'clear blue water'"},
-               title: "Admission to Statehood", body: "Minnesota was admitted as the 32nd State in 1858"},
-               title: "State Motto", body: "L'Étoile du Nord: <br>The Star of the North"),
-               title: "State Nickname", body: "Land of 10,000 Lakes"},
-               title: "Share borders with...", body: "North and South Dakota, Iowa, Wisconsin and Canada"},
-               title: "State Bird", body: "The Loon"},
-               title: "State Flower", body: "The Showy Lady's Slipper"},
-               title: "State Capital", body: "Saint Paul"}])
+               {title: "Admission to Statehood", body: "Minnesota was admitted as the 32nd State in 1858"},
+               {title: "State Motto", body: "L'Étoile du Nord: <br>The Star of the North"},
+               {title: "State Nickname", body: "Land of 10,000 Lakes"},
+               {title: "Share borders with...", body: "North and South Dakota, Iowa, Wisconsin and Canada"},
+               {title: "State Bird", body: "The Loon"},
+               {title: "State Flower", body: "The Showy Lady's Slipper"},
+               {title: "State Capital", body: "Saint Paul"}])
 
 
 

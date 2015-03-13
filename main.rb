@@ -53,7 +53,6 @@ get "/" do
 end
 
 get "/login" do
-  write unless 
   erb :login
 end
 
@@ -70,7 +69,7 @@ post "/login_verify" do
       session[:user_id] = user.id
       redirect "/"
     else
-      @error = "Invalid email/password combination"
+      @error = "Invalid email/password combination <br>Please try again"
       session[:error] = @error
       redirect "/login"
     end
