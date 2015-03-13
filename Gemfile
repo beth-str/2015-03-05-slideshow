@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
+gem 'bcrypt'
+gem 'json'
+gem 'pg', :groups => [:production]
 gem 'pry'
 gem 'sinatra'
-gem 'sqlite3'
-gem 'json'
 gem 'sinatra-activerecord'
-gem 'bcrypt'
+gem 'sqlite3', :groups => [:development]
