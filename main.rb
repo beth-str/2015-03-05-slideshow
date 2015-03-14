@@ -81,6 +81,12 @@ post "/login_verify" do
   redirect "/"
 end
 
+get "/quiz" do
+
+  erb :game
+end
+
+
 get "/:id" do 
   id = params[:id].to_i
   get_slide = Slide.where({"id" => id})
