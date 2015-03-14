@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* Layout (global rules for all sizes) */
+
+body {
+  margin: 0; 
+  padding: 0;
+}
+
+header a.logo {
+  display: block;
+  position: absolute;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+
+nav {
+  width: 100%;
+  display: block;
+  background-color: #ffcc00;
+}
+
+/* Layout Large Screens (default for older browsers) */
+
+header {
+  background: url(../images/banner_large.jpg) no-repeat right 0px;
+}
+
+article {
+  padding: 30px 20px 10px 20px;
+}
+
+.promo_container {
+  padding: 0px 0px 15px 20px;
+}
+
+.promo_container .promo {
+  width: 33%;
+  float: left;
+  background-position: 0px 3px;
+  
+}
+
+.promo_container .promo .content {
+  padding: 0px 30px 0px 70px;
+}
+
+nav {
+  top: 275px; 
+  overflow: hidden;
+}
+
+nav a {
+  margin: 12px 0px 10px 20px;
+  color: #336600;
+}
+
+@media screen and (max-width:990px){
+  footer { padding-left: 20px; }
+}
+
+#hero { height: 275px; position: relative; overflow: hidden; }
+
+#hero .panel { width: 100%; height: 275px; position: absolute; overflow: hidden; }
+
+#hero .panel img { position: absolute; top: 0px; right: 0px; }
+
+#hero .panel .caption { position: absolute; top: 95px; left: 0px; width: 45%; background-color: rgba(45,50,79,.85); padding: 25px 20px 15px 35px;}
+
+a.mobile_menu { display: none; }

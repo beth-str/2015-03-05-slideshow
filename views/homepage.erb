@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+	<title>MN State Facts</title>
+  
+  <script src="/global.js" type="text/javascript" charset="utf-8"></script>
+  
+      <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+    
+      <link rel="stylesheet" type="text/css" href="css/screenstyles.css" />
+      <link rel="stylesheet" type="text/css" href="css/screen_layout_large.css" />
+      <link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:500px)"
+      href="css/screen_layout_small.css" /> 
+      <link rel="stylesheet" type="text/css" media="only screen and (min-width:501px) and (max-width:800px)"
+      href="css/screen_layout_medium.css" />
+    
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/farinspace/jquery.imgpreload.min.js"></script>
+      <script type="text/javascript" src="js/design.js"></script>
+    
+    
+      <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie_7_and_8.css" />
+  <script type="text/javascript" src="js/respond.min.js"></script>      
+      	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+  
+</head>
+
+<body>
+  
+  <div class="page">
+    <header>
+      <div id="hero"></div>
+      <a class="mobile_menu"></a>
+      <a class="logo" href="#"></a>
+    </header>
+
+    <nav>
+      <div>
+      <a href="#">Home</a>
+      <a href="#">View Slides</a>
+      <a href="#">Play Quiz</a>
+      <a href="#">Log In</a>
+      <a href="#">Log Out</a>
+      </div>
+    </nav>
+  
+  
+      <div align="right">
+        <% if session[:user_id] != nil %>
+        <div style="font-size:8px" id="user">Hello, <%= session[:user_id] %>!     </div>
+        <%end%>
+        <!-- <a href="/login" id="id_btn">Log in</a> -->
+        <a href="/login"><button id="li_btn">Log in</button></a>
+        <!-- <a href="/login" id="id_btn">Log in</a> -->
+        <a href="/logout"><button id="lo_btn">Log out</button></a>
+      </div>
+
+  <h2>Minnesota State Facts</h2>
+  <h3>What would you like to do?</h3>
+  <p><div>
+      <a href="/slides"><button value="slideshow" id="slides_btn">Watch Slides</button></a>
+      <a href="/quiz"><button value="quizshow" id="quiz_btn">Play Quiz</button></a>
+    </div></p>
+    
+      <footer>
+        &copy; Beth Stranz – Quiz Show
+      </footer>
+      
+      </div>
+      
+</body>
+</html> 
+

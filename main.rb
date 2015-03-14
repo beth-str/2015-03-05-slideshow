@@ -41,15 +41,25 @@ configure do
   enable :sessions
 end
 
-before "/1" do
-  if session[:user_id]
-  else
-    redirect "/login"
-  end
+# before "/" do
+#   # if session[:user_id]
+#   # else
+#   #   redirect "/login"
+#   # end
+# end
+
+get "/" do
+  erb :homepage
 end
 
-get "/" do 
-  erb :homepage
+get "/slides" do 
+  erb :slideshow
+end
+
+get "/slides/:id" do 
+  id = params[:id].to_i
+  get_slide = Slide.where({"id" => id})
+  get_slide.to_json
 end
 
 get "/login" do
@@ -82,15 +92,7 @@ post "/login_verify" do
 end
 
 get "/quiz" do
-
   erb :game
-end
-
-
-get "/:id" do 
-  id = params[:id].to_i
-  get_slide = Slide.where({"id" => id})
-  get_slide.to_json
 end
 
 #all slides
@@ -105,4 +107,3 @@ end
 #   else redirect "/login"
 #   end
 # end
-

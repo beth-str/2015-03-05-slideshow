@@ -9,18 +9,22 @@ window.onload = function(){
   prevButton = document.getElementById("prev_btn");
   liButton = document.getElementById("li_btn")
   loButton = document.getElementById("lo_btn")
+  slidesButton = document.getElementById("slides_btn")
+  quizButton = document.getElementById("quiz_btn")
 
   //Listen for next_btn and prev_button
   nextButton.addEventListener("click", nextSlide);
   prevButton.addEventListener("click", prevSlide);
   liButton.addEventListener("click", logIn);
   loButton.addEventListener("click", logOut);
+  slidesButton.addEventListener("click", loadFirstSlide);
+  
 }
 
 // Load first slide on window / page load
 var loadFirstSlide = function(){
   var initial_request = new XMLHttpRequest();
-  initial_request.open("get", "/1");
+  initial_request.open("get", "/slides/" + current_slide);
   initial_request.onreadystatechange = function() {
     if ((initial_request.readyState===4) && (initial_request.status===200)) {
       var parsed_response = JSON.parse(initial_request.response);
@@ -60,7 +64,7 @@ var nextSlide = function(){
   console.log(current_slide);
   //make and parse request and return to innerHTML
   var next_req = new XMLHttpRequest();
-  next_req.open("get", "http://localhost:4567/" + current_slide);
+  next_req.open("get", "http://localhost:4567/slides/" + current_slide);
   next_req.onreadystatechange = function() {
     if ((next_req.readyState===4) && (next_req.status===200)) {
     var parsed_response = JSON.parse(next_req.response);
@@ -81,7 +85,7 @@ var prevSlide = function(){
   current_slide = current_slide - 1};
   console.log(current_slide);
   var prev_req = new XMLHttpRequest();
-  prev_req.open("get", "http://localhost:4567/" + current_slide);
+  prev_req.open("get", "http://localhost:4567/slides/" + current_slide);
   prev_req.onreadystatechange = function() {
     if ((prev_req.readyState===4) && (prev_req.status===200)) {
     var parsed_response = JSON.parse(prev_req.response);

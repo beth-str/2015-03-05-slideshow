@@ -1,0 +1,126 @@
+/* @override 
+	http://iviewsource.com/exercises/json/mystyle.css */
+
+body {
+	background: #8FABD9;
+  line-height: 1.5em;
+	font-family: Arial;
+  margin: 10px;
+  font-size: 14px;
+  background: #fff url(../images/background_gradient.png) repeat-x 0px 0px;
+}
+
+.page {
+  max-width: 980;
+  margin: 0px auto 0px auto;
+  position: relative;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0 0 .5em 0;
+}
+
+h2 {
+  font-size: 1.7em;
+  margin: 0 0 1em 0;
+  text-align: center;
+  color: #000066;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+p {
+  margin: 0 0 .75em 0;
+}
+
+a {
+  color: #de9000;
+}
+
+a:hover {
+  color: #009eff;
+}
+
+footer {
+  font-size: .85em;
+  color: #000;
+  background-color: #fff;
+  padding: 10px 10px 10px 0px;
+}
+
+nav a {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+.clear-fix {
+  clear: both;
+  line-height: 1px;
+}
+
+#hero .panel .caption { color: rgba(255,255,255,.65); line-height: 14px; }
+#hero .panel .caption h3 { color: #fff; font-size: 1.2em; margin-bottom: 5px; }
+#hero .panel .caption p { margin-bottom: 5px; }
+
+#hero .panel .caption a.cta { font-size: .8em; margin: 0; color: #fff; background-position: right -101px; }
+#hero .panel .caption a.cta:hover { color: #fff; background-position: right -151px; }
+
+/*
+  Original box etc - ??
+*/
+#box {
+	width: 500px;
+  height: 200px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+  border: #cccccc solid 1px;
+	overflow: auto;
+}
+
+#box h3, #box h4 {
+	margin: 0;
+	padding: 0;
+  text-align: center;
+} 
+
+#box h3 {
+	font-size: 36px;
+	line-height: .9em;
+	color: #990033;
+  margin: 0 0 20px 0;
+}
+
+#box h4 {
+	font-size: 30px;
+	color: #003333;
+	font-weight: bold;
+	margin-bottom: 5px;
+	line-height: 1.2em;
+}
+
+#box #next_btn, #box #prev_btn {
+	background: #000066;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin-top: 40px;
+	display: inline-block;
+	color: #FFF;
+}
+
+#box a#next_btn, #box a#prev_btn {
+	text-decoration: none;
+	color: #FFF;
+}

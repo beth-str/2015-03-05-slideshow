@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* Style Overrides for IE 7 & 8 */
+
+
+header a.mobile_menu {
+  display: none;
+}
+
+#hero .panel .caption {
+  color: #9ea4bd;
+  background-color: #525673;
+}
+
