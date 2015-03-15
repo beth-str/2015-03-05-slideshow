@@ -2,12 +2,12 @@
 	http://iviewsource.com/exercises/json/mystyle.css */
 
 body {
-	background: #8FABD9;
+/*  background: #8FABD9;*/
   line-height: 1.5em;
 	font-family: Arial;
   margin: 10px;
   font-size: 14px;
-  background: #fff url(../images/background_gradient.png) repeat-x 0px 0px;
+/*  background: #fff url(../images/background_gradient.jpg) repeat-x 0px 0px;*/
 }
 
 .page {
@@ -18,7 +18,7 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.2em;
   font-weight: normal;
   margin: 0 0 .5em 0;
 }
@@ -27,12 +27,14 @@ h2 {
   font-size: 1.7em;
   margin: 0 0 1em 0;
   text-align: center;
-  color: #000066;
+  color: #405D99;
+  letter-spacing: 1.5px;
 }
 
 h3 {
   font-size: 1.5em;
   margin: 0 0 1em 0;
+  color: #451D1E;
 }
 
 p {
@@ -40,17 +42,17 @@ p {
 }
 
 a {
-  color: #de9000;
+  color: #0080FF;
 }
 
 a:hover {
-  color: #009eff;
+  color: #ffcc00;
 }
 
 footer {
   font-size: .85em;
   color: #000;
-  background-color: #fff;
+  background-color: #ccc;
   padding: 10px 10px 10px 0px;
 }
 
@@ -97,18 +99,18 @@ nav a {
 } 
 
 #box h3 {
-	font-size: 36px;
+	font-size: 2em;
 	line-height: .9em;
 	color: #990033;
   margin: 0 0 20px 0;
 }
 
 #box h4 {
-	font-size: 30px;
+	font-size: 1.8em;
 	color: #003333;
 	font-weight: bold;
-	margin-bottom: 5px;
-	line-height: 1.2em;
+	margin-bottom: 3px;
+	line-height: 1.3em;
 }
 
 #box #next_btn, #box #prev_btn {

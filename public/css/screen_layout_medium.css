@@ -3,7 +3,7 @@
 /* Layout Medium Screens */
 
 header {
-  background: url(../images/banner_medium.jpg) no-repeat 90% 0px;
+  background: url('../images/banner_medium.jpg') no-repeat 90% 0px;
 }
 
 nav a {

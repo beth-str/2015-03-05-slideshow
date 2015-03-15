@@ -7,42 +7,21 @@ body {
   padding: 0;
 }
 
-header a.logo {
-  display: block;
-  position: absolute;
-  background-position: 0px 0px;
-  background-repeat: no-repeat;
-}
-
 nav {
   width: 100%;
   display: block;
-  background-color: #ffcc00;
+  background-color: #405D99;
 }
 
 /* Layout Large Screens (default for older browsers) */
 
 header {
-  background: url(../images/banner_large.jpg) no-repeat right 0px;
+  background: url('/images/banner_large.jpg') no-repeat right 0px;
 }
+
 
 article {
   padding: 30px 20px 10px 20px;
-}
-
-.promo_container {
-  padding: 0px 0px 15px 20px;
-}
-
-.promo_container .promo {
-  width: 33%;
-  float: left;
-  background-position: 0px 3px;
-  
-}
-
-.promo_container .promo .content {
-  padding: 0px 30px 0px 70px;
 }
 
 nav {
@@ -52,7 +31,7 @@ nav {
 
 nav a {
   margin: 12px 0px 10px 20px;
-  color: #336600;
+  color: #fff;
 }
 
 @media screen and (max-width:990px){
