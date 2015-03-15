@@ -101,6 +101,15 @@ get "/allslides" do
   all_slides_hash.to_json
 end
 
+get "/addslide" do
+  erb :addslide
+end
+
+post "/addslide_verify" do
+  slide = Slide.create(title: params["title"], body: params["body"])
+redirect "/addslide"
+end
+
 # def current_user
 #   if session[:user_id]
 #     @current_user = User.find(session[:user_id])
