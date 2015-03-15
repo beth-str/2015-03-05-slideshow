@@ -11,7 +11,8 @@ end
 
 unless ActiveRecord::Base.connection.table_exists?(:users)
    ActiveRecord::Base.connection.create_table :users do |t|
-     t.text :username
+     t.text :name
+     t.text :email
      t.text :password
    end
 end
@@ -38,7 +39,8 @@ end
 #
 # DATABASE.execute("CREATE TABLE IF NOT EXISTS users
 #                 (id INTEGER PRIMARY KEY,
-#                 username TEXT NOT NULL,
+#                 name TEXT NOT NULL,
+#                 email TEXT NOT NULL,
 #                 password TEXT NOT NULL)")
 #
 #

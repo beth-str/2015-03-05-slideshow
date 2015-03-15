@@ -72,11 +72,11 @@ get "/logout" do
 end
 
 post "/login_verify" do
-  if User.find_by_username(params["username"]) != nil
-    user = User.find_by_username(params["username"])
+  if User.find_by_email(params["email"]) != nil
+    user = User.find_by_email(params["email"])
     # if BCrypt::Password.create(params[:password]) == user.password #based on a string
     if BCrypt::Password.new(user.password) == params[:password] #based on a hash or a string
-      session[:user_id] = user.id
+      session[:user_name] = user.name
       redirect "/"
     else
       @error = "Invalid email/password combination <br>Please try again"
@@ -85,8 +85,8 @@ post "/login_verify" do
     end
   else
     params["password"] = BCrypt::Password.create(params[:password])
-    user = User.create(username: params["username"], password: params["password"])
-    session[:user_id] = user.id
+    user = User.create(name: params["name"], email: params["email"], password: params["password"])
+    session[:user_name] = user.name
   end
   redirect "/"
 end

@@ -47,9 +47,9 @@
     </nav>
   
   
-      <div align="right">
-        <% if session[:user_id] != nil %>
-        <div style="font-size:8px" id="user">Hello, <%= session[:user_id] %>!     </div>
+      <div align="right" padding="10px">
+        <% if session[:user_name] != nil %>
+        <div style="font-size:8px" id="user">Hello, <%= session[:user_name] %>!     </div>
         <%end%>
         <!-- <a href="/login" id="id_btn">Log in</a> -->
         <a href="/login"><button id="li_btn">Log in</button></a>
@@ -61,10 +61,22 @@
   <div align="center">
   <h3>What would you like to do?</h3>
   <p><div>
-      <a href="/slides"><button value="slideshow" id="slides_btn">Watch Slides</button></a>
+      <a href="/slides"><button value="slideshow" id="slides_btn">View Slides</button></a>
       <a href="/quiz"><button value="quizshow" id="quiz_btn">Play Quiz</button></a>
     </div></p>
     </div>
+</div>
+    
+    <div id="box">
+      <div id="slide">
+        <h3><div id="title"></div></h3>
+        <h4><div id="body"></div></h4>
+      </div>
+        <button value="current_slide" id="prev_btn">Previous</button>
+        <button value="current_slide" id="next_btn">Next</button>
+      </div>
+      <br>
+      <br>
     
       <footer>
         &copy; 2015 Quiz Show
