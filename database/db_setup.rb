@@ -18,7 +18,7 @@ unless ActiveRecord::Base.connection.table_exists?(:users)
 end
 
 
-# Slide.create([{title: "State Name", body: "'Minnesota' is the Dakota word for 'clear blue water'"},
+# Slide.create([{title: "State Name", body: "'Minnesota' is the Dakota word for <br>'clear blue water'"},
 #                {title: "Admission to Statehood", body: "Minnesota was admitted as the 32nd State in 1858"},
 #                {title: "State Motto", body: "L'Étoile du Nord: <br>The Star of the North"},
 #                {title: "State Nickname", body: "Land of 10,000 Lakes"},
