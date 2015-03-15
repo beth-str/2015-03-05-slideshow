@@ -5,14 +5,12 @@ body {
 /*  background: #8FABD9;*/
   line-height: 1.5em;
 	font-family: Arial;
-  margin: 10px;
   font-size: 14px;
-  padding: 10px;
 /*  background: #fff url(../images/background_gradient.jpg) repeat-x 0px 0px;*/
 }
 
 .page {
-  max-width: 980;
+  max-width: 980px;
   margin: 0px auto 0px auto;
   position: relative;
   background-color: #fff;
