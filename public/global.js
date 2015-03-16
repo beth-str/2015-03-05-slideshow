@@ -24,11 +24,11 @@ window.onload = function(){
 // Load first slide on window / page load
 var loadFirstSlide = function(){
   var initial_request = new XMLHttpRequest();
-  initial_request.open("get", "https://mn-quiz-show.herokuapp.com/slides/" + current_slide);
+  initial_request.open("get", "/slides/" + current_slide);
   initial_request.onreadystatechange = function() {
     if ((initial_request.readyState===4) && (initial_request.status===200)) {
       var parsed_response = JSON.parse(initial_request.response);
-      var slide = parsed_response[0].slide;
+      var slide = parsed_response[0];
       console.log(slide)
       document.getElementById("title").innerHTML = slide.title;
       document.getElementById("body").innerHTML = slide.body;
@@ -41,7 +41,7 @@ var loadFirstSlide = function(){
 var logIn = function() {
   //Show login page to user
   var log_req = new XMLHttpRequest();
-  log_req.open("get", "https://mn-quiz-show.herokuapp.com/login");
+  log_req.open("get", "/login");
   log_req.onreadystatechange = function() {
     if ((log_req.readyState===4) && (log_req.status===200)) {
       var parsed_response = JSON.parse(log_req.response);
@@ -64,11 +64,11 @@ var nextSlide = function(){
   console.log(current_slide);
   //make and parse request and return to innerHTML
   var next_req = new XMLHttpRequest();
-  next_req.open("get", "https://mn-quiz-show.herokuapp.com/slides/" + current_slide);
+  next_req.open("get", "/slides/" + current_slide);
   next_req.onreadystatechange = function() {
     if ((next_req.readyState===4) && (next_req.status===200)) {
     var parsed_response = JSON.parse(next_req.response);
-    var slide = parsed_response[0].slide;
+    var slide = parsed_response[0];
     console.log(slide);
     document.getElementById("title").innerHTML = slide.title;
     document.getElementById("body").innerHTML = slide.body;
@@ -85,11 +85,11 @@ var prevSlide = function(){
   current_slide = current_slide - 1};
   console.log(current_slide);
   var prev_req = new XMLHttpRequest();
-  prev_req.open("get", "https://mn-quiz-show.herokuapp.com/slides/" + current_slide);
+  prev_req.open("get", "/slides/" + current_slide);
   prev_req.onreadystatechange = function() {
     if ((prev_req.readyState===4) && (prev_req.status===200)) {
     var parsed_response = JSON.parse(prev_req.response);
-    var slide = parsed_response[0].slide;
+    var slide = parsed_response[0];
     console.log(slide);
     document.getElementById("title").innerHTML = slide.title;
     document.getElementById("body").innerHTML = slide.body;
